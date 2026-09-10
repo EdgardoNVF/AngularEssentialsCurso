@@ -1,0 +1,33 @@
+<div class="container py-4">
+  <div class="row g-4">
+
+    <div class="col-12 col-lg-4">
+       <app-petform (newPet)="insert($event)">
+       </app-petform>
+    </div>
+
+
+    <div class="col-12 col-lg-8">
+      <h2 class="h4 mb-3">Mascotas Registradas</h2>
+
+      <div class="row g-3">
+         @for (pet of pets(); track pet) {
+           <div class="col-12 col-md-6">
+              <app-petcard
+              [pet]="pet"
+              (namePet)="delete($event)">
+              </app-petcard>
+           </div>
+         }@empty {
+           <div class="col-12">
+              <div class="alert alert-info">
+                 Aún no hay mascotas registradas
+              </div>
+           </div>
+         }
+      </div>
+
+    </div>
+
+  </div>
+</div>
