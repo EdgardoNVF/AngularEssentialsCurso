@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { ItemEntity } from '../../model/entitites';
 
 @Component({
   selector: 'app-itemcard',
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   templateUrl: './itemcard.html',
   styleUrl: './itemcard.css',
 })
-export class Itemcard {}
+export class Itemcard {
+  //recibimos un item
+  item=input.required<ItemEntity>();
+}

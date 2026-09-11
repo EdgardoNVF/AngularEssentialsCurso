@@ -1,0 +1,50 @@
+<div class="container mt-5">
+
+  <h1 class="display-4 text-center mb-4">
+    Cursos disponibles
+  </h1>
+
+  <div class="row g-4">
+
+    @for (curso of cursos(); track curso) {
+
+      <div class="col-12 col-md-6 col-lg-4">
+
+        <div class="card h-100 shadow-sm border-0">
+          <div class="card-body p-4">
+
+            <h4 class="card-title fw-bold mb-3">
+              {{ curso.name }}
+            </h4>
+
+            <p class="card-text">
+              <strong>Duración:</strong>
+              {{ curso.duracion }}
+            </p>
+
+            <hr>
+
+            <p class="fw-semibold mb-2">
+              Tecnologías
+            </p>
+
+            <div class="d-flex flex-wrap gap-2">
+
+              @for (tecnologia of curso.tecnologias; track tecnologia) {
+                <span class="badge text-bg-secondary">
+                  {{ tecnologia }}
+                </span>
+              }
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    }
+
+  </div>
+
+</div>
